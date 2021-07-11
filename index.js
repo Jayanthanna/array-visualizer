@@ -18,6 +18,7 @@ function generate()
         //random funtion to get value between 800 and 100
         var rand=Math.floor(Math.random() * 800) + 100  ;
         arr[i]=rand;
+        var cont_for_array=document.getElementById("arrays");
         var line=document.getElementById("array_"+i);
         line.style.transition="height 0.1s linear";
         line.innerHTML=rand;
@@ -27,37 +28,53 @@ function generate()
             line.style.width="30px";
             line.style.margin="10px";
             line.style.height=rand+"px";
+            cont_for_array.style.justifyContent="space-between"
         }
         else if(size>10&&size<=20){
-            line.style.fontSize="15px";
-            line.style.width="25px";
-            line.style.margin="9px";
-            line.style.height=rand+"px";
-        }
-        else if(size>20&&size<=30){
             line.style.fontSize="10px";
             line.style.width="15px";
-            line.style.margin="7px";
+            line.style.margin="4px";
             line.style.height=rand+"px";
+            cont_for_array.style.justifyContent="center"
         }
+        // else if(size>20&&size<=30){
+        //     line.style.fontSize="10px";
+        //     line.style.width="10px";
+        //     line.style.margin="7px";
+        //     line.style.height=rand+"px";
+        //     cont_for_array.style.justifyContent="space-between"
+        // }
         else if(size>20&&size<=30){
             line.style.fontSize="5px";
             line.style.width="10px";
-            line.style.margin="5px";
+            line.style.margin="2px";
             line.style.height=rand+"px";
+            cont_for_array.style.justifyContent="center"
         }
         else if(size>30&&size<=40){
             line.style.fontSize="5px";
             line.style.width="5px";
-            line.style.margin="3px";
+            line.style.margin="1.5px";
             line.style.height=rand+"px";
+            cont_for_array.style.justifyContent="center"
         }
         else
         {
-            line.style.fontSize="1px";
-            line.style.width="2px";
-            line.style.margin="2px";
-            line.style.height=rand+"px";
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            if(isMobile){
+                line.style.fontSize="1px";
+                line.style.width="1px";
+                line.style.margin="1px";
+                line.style.height=rand+"px";
+                cont_for_array.style.justifyContent="center"
+            }
+            else{
+                line.style.fontSize="1px";
+                line.style.width="5px";
+                line.style.margin="2px";
+                line.style.height=rand+"px";
+                cont_for_array.style.justifyContent="center"
+            }
         }
     }
     //this for loop make sure when the size is decreased array has less elements in it and also extra div tags are removed
@@ -136,6 +153,8 @@ function start()
     interval=stoptime-starttime;
     //prints using inner html amount of nano seconds taken
     var change=document.getElementById("stopwatch");
+    change.innerHTML=interval+"<br> nano-seconds";
+    var change=document.getElementById("stopwatch_for_handheld_devices");
     change.innerHTML=interval+"<br> nano-seconds";
 }
 

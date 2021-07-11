@@ -2,43 +2,46 @@
 <html>
     <head>
         <title>Array visuals</title>
-
+        <!-- meta tags -->
+        <meta charset="utf-8">
+        <meta name = "viewport" content = "width = device-width, user-scalable = 0, initial-scale = 1.0, maximum-scale = 1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- linking style sheet to html page -->
-
         <link rel="stylesheet" href="index.css" type="text/css">
     </head>
     <body>
-
         <!-- linking js code to html page -->
-
         <script src="index.js"></script>
-
         <!--  -->
-
         <div id="header">
             <div id="header_controls">
                 <!-- labels  -->
                 <label for="types" class="labels"id="types_label">Select sorting technique</label>
                 <label for="size" class="labels" id="size_label">Scroll to select size of array</label><br>
                 <!-- types of sorting algorithm to select from -->
-                <select name="types" id="types">
-                    <option value="1">Bubble sort</option>
-                    <option value="2">Merge sort</option>
-                    <option value="3">Heap sort</option>
-                    <option value="4">quick-sort</option>
-                    <option value="5">Selection-sort</option>
-                    <option value="6">Insertion-sort</option>
-                </select>
-                <!-- range from 1 to 100 that defines size of array -->
-                <input type="range" id="size" min="1" max="100" oninput="generate()">
-                <!-- showing what range is to the user -->
-                <p id="value_of_range"></p>
-                
+                <div id="input_fields">
+                    <select name="types" class="sorting_type" id="types">
+                        <option value="1">Bubble sort</option>
+                        <option value="2">Merge sort</option>
+                        <option value="3">Heap sort</option>
+                        <option value="4">quick-sort</option>
+                        <option value="5">Selection-sort</option>
+                        <option value="6">Insertion-sort</option>
+                    </select>
+                    <label for="types" class="labels"id="types_label_mobile">Select sorting technique</label>
+                    <!-- range from 1 to 100 that defines size of array -->
+                    <input type="range" id="size" min="1" max="100" oninput="generate()">
+                    <!-- showing what range is to the user -->
+                    <p id="value_of_range"></p>
+                </div>
             </div>
             <div id="header_button">
                 <!-- change and start buttons -->
                 <button id="button_generate" onclick="generate()">Change</button>
                 <button id="button_start" onclick="start()">Start</button>
+            </div>
+            <div ><p id="stopwatch_for_handheld_devices"> press start <br> to see <br> time taken</p>
+                <div><p id="info_for_handheld_devices">*this time is not exactly <br> the time taken for sorting<br>, but it still gives <br> more or less idea about <br> which sorting is faster</p></div>
             </div>
         </div>
         <div class="container2">

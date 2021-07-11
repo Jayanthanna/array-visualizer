@@ -6,7 +6,7 @@
   /* styling for div tag containing buttons labels and inputs */
 #header{
     background-color: rgb(53, 2, 83);
-    height: 50px;
+    height: auto;
     width: 100%;
     color: white;
     padding-top: 50px;
@@ -87,6 +87,7 @@
     width: 600px;
     display: flex;
     justify-content: space-between;
+    color: white;
 }
 
 /* styling for each single div representing array element */
@@ -125,4 +126,111 @@
     font-size: 15px;
     color: red;
     margin-left: 120px;
+}
+#stopwatch_for_handheld_devices,#info_for_handheld_devices{
+    display: none;
+}
+#types_label_mobile{
+    display: none;
+}
+@media only screen and (max-width: 480px)
+{
+    
+    #header{
+        background-color: rgb(53, 2, 83);
+        height: auto;
+        width: 100%;
+        color: white;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    #input_fields{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .labels{
+        padding:0;
+    }
+    #size_label{
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: large;
+        font-weight: 600;
+    }
+    #size{
+        margin-left: 0;
+        border: 2px solid white;
+        width: 60%;
+    }
+    #value_of_range{
+        margin-left: 0;
+        margin-top: 0;
+    }
+    #types_label{
+        display: none;
+    }
+    #types_label_mobile{
+        display: block;
+        margin-top: 20px;
+    }
+    #types{
+        margin-top: 10px;
+        font-weight: 600;
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        color: white;
+        background-color: rgb(53, 2, 83);
+        margin-left: 0;
+        width: 60%;
+    }
+    #header_button
+    {
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
+    }
+    #button_start{
+        color: white;
+        background-color: rgb(120, 180, 0);
+        margin-left: 0; 
+        height: 50px;
+        width: 150px;
+        font-size: large;
+        font-weight: 600;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    /* change button styling */
+    #button_generate{
+        color: white;
+        background-color: rgb(120, 180, 0);
+        margin-left:  0;
+        height: 50px;
+        width: 150px;
+        font-size: large;
+        font-weight: 600;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    #arrays{
+        margin-left: 0;
+        width:100%;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+    #stopwatch,#info{
+        display: none;
+    }
+    #stopwatch_for_handheld_devices,#info_for_handheld_devices{
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+    #info_for_handheld_devices{
+        color: red;
+    }
 }
